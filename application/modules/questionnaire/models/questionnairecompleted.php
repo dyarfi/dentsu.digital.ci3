@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 // Model Class Object for Questionnairecompleted
-class Questionnairecompleted Extends MY_Model {
+class QuestionnaireCompleted Extends MY_Model {
     
 	// Table name for this model
 	public $table = 'questionnaire_completed';
@@ -104,9 +104,6 @@ class Questionnairecompleted Extends MY_Model {
 	
 	public function setUserCompletedQuestionnaire($object=null){
 
-
-		//rint_r($object);
-
 		if (is_array($object)) {
 			foreach ($object['questionnaire_id'] as $key => $value) {
 				$data['participant_id']	  = $object['participant_id'];
@@ -142,6 +139,20 @@ class Questionnairecompleted Extends MY_Model {
 		//return $insert_id;
 		
 	}	
+
+	public function getUserQuestionnaireCompleted($participant_id) {
+		if(!empty($participant_id)){
+			$data = array();
+			$options = array('participant_id' => $participant_id);
+			$Q = $this->db->get_where($this->table,$options);
+			if ($Q->num_rows() > 0){
+				foreach ($Q->result_object() as $row)
+				$data[] = $row;
+			}
+			$Q->free_result();
+			return $data;
+		}
+	}
 	
 	// Delete Questionnairecompleted
 	public function deleteUserComplete($id) {

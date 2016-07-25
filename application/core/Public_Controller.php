@@ -78,7 +78,8 @@ class Public_Controller extends MY_Controller {
 
 		//print_r($this->session->unset_userdata('participant'));
 
-		//print_r($this->participant);
+		//print_r($this->session->userdata ('participant'));
+		//exit;
 
 		//$this->session->set_userdata('participant',$this->participant);
 
