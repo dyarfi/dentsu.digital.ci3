@@ -23,13 +23,11 @@ class Sessions Extends MY_Model {
 	    if (!$this->db->table_exists($this->table)) { 
 			$insert_data	= TRUE;
 
-			$sql = 'CREATE TABLE IF NOT EXISTS `'.$this->table.'` ('
-					. '`id` VARCHAR(42) NOT NULL DEFAULT 0 PRIMARY KEY,'
-					. '`ip_address` INT(11) NOT NULL DEFAULT 0, '
-					. '`timestamp` INT(11) UNSIGNED NOT NULL,'
-					. '`data` TEXT NULL, '
-					. 'INDEX (`id`, `ip_address`) '
-					. ') ENGINE=MYISAM DEFAULT CHARSET=utf8;';
+			$sql = 'CREATE TABLE IF NOT EXISTS `'.$this->table.'` (
+					`id` varchar(40) NOT NULL,
+					`ip_address` varchar(45) NOT NULL,
+					`timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+					`data` blob NOT NULL, KEY `ci_sessions_timestamp` (`timestamp`) ENGINE=MYISAM DEFAULT CHARSET=utf8;';
 
 			$this->db->query($sql);
 	    }
