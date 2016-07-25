@@ -943,7 +943,7 @@ class User extends Admin_Controller {
     public function export() {
 
 		// Data collection        
-        $users = $this->Users->getAllUsers();
+        $users = $this->Users->getAllUser();
         
 		// Return excel data
         return $this->excel->export($users);

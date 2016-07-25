@@ -96,7 +96,7 @@ $config['modulelist'] = array(
 						'usergroup/edit'    => 'Edit User Group',
 						'usergroup/delete'  => 'Delete User Group',
 						'usergroup/change'  => 'Change User Group Status',
-						'usergroup/export'	=> 'Export User Group Data', /** Export user data  **/
+						'usergroup/export'	=> 'Export User Group Data', /** Export user group data  **/
 						// Language functions
 						'language/add'	    => 'Add Language',
 						'language/view'	    => 'View Language',
@@ -113,6 +113,7 @@ $config['modulelist'] = array(
 						'serverlog/view'	=> 'View Server Log',
 						'serverlog/edit'	=> 'Edit Server Log',
 						'serverlog/delete'	=> 'Delete Server Log',
+						'serverlog/export'	=> 'Server Log Export Data', /** Export server log data  **/
 						'serverlog/trash'	=> 'Trash Server Log'
 						)
 	),
