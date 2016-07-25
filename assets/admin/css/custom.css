@@ -1,0 +1,33 @@
+/* here you can put your own css to customize and override the theme */
+.footer {
+	
+}
+
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+	margin: 0px 0px 0px 0px;
+}
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 4px;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.img_holder_xhr .img-thumbnail {
+	padding: 0;
+}
+.img_holder_xhr .img-thumbnail img {
+	width: 300px;
+	text-align: center
+}
+.img_holder_xhr .img-thumbnail {
+	min-width: 300px;
+	max-height: 300px;
+	overflow: hidden
+}
