@@ -84,10 +84,11 @@
     <script src="<?php echo base_url();?>assets/public/js/custom.js"></script>
     <script>
     $(document).ready(function() {
-  <?php 
-    // Write the javascript inline in the controller
-    echo ($js_inline) ? "\t".$js_inline."\n" : "";
-  ?>
+      <?php 
+        // Write the javascript inline in the controller
+        echo ($js_inline) ? "\t".$js_inline."\n" : "";
+      ?>
+      
         $('.col-md-6 .alert.alert-danger').fadeIn('slow');
 
         /*

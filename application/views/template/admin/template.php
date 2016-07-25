@@ -223,9 +223,8 @@ jQuery(document).ready(function() {
     FormSetting.init();
 <?php echo ($js_inline) ? "\t".$js_inline."\n" : "";?>
 <?php if ($this->session->flashdata('message')) { ?>
-	bootbox.alert('<h3><?php echo $this->session->flashdata("message");?></h3>');
+	bootbox.alert('<h3><?php echo $this->session->flashdata('message');?></h3>');
 <?php } ?>
-
 });
 </script>
 <!-- END JAVASCRIPTS -->

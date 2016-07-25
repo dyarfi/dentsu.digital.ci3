@@ -375,7 +375,7 @@ $config['sess_driver'] = 'database';
 $config['sess_expiration'] = 0;
 $config['sess_save_path'] = 'ci_sessions';
 //$config['sess_save_path'] = NULL;
-$config['sess_match_ip']	= TRUE;
+$config['sess_match_ip']	= FALSE;
 //$config['sess_time_to_update']	= 300;
 $config['sess_time_to_update']	= 0;
 $config['sess_regenerate_destroy'] = FALSE;
@@ -427,7 +427,7 @@ $config['standardize_newlines'] = FALSE;
 |          for backwards compatibility purposes!
 |
 */
-$config['global_xss_filtering'] = FALSE;
+$config['global_xss_filtering'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -444,8 +444,8 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
 $config['csrf_protection'] = FALSE;
-$config['csrf_token_name'] = 'csrf_test_name';
-$config['csrf_cookie_name'] = 'csrf_cookie_name';
+$config['csrf_token_name'] = 'csrf_token_app';
+$config['csrf_cookie_name'] = 'csrf_cookie_app';
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
 $config['csrf_exclude_uris'] = array();
