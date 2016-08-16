@@ -14,11 +14,11 @@
  * Please see the corresponding license file for details of these licenses.
  * You are free to use, modify and distribute this software, but all copyright information must remain.
  *
- * @package    	grocery CRUD
- * @copyright  	Copyright (c) 2010 through 2012, John Skoumbourdis
- * @license    	https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
- * @version    	1.4.1
- * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
+ * @package     grocery CRUD
+ * @copyright   Copyright (c) 2010 through 2012, John Skoumbourdis
+ * @license     https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
+ * @version     1.4.1
+ * @author      John Skoumbourdis <scoumbourdisj@gmail.com>
  */
 // ------------------------------------------------------------------------
 
@@ -27,10 +27,10 @@
  *
  * The types of the fields and the default reactions
  *
- * @package    	grocery CRUD
- * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
+ * @package     grocery CRUD
+ * @author      John Skoumbourdis <scoumbourdisj@gmail.com>
  * @license     https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
- * @link		http://www.grocerycrud.com/documentation
+ * @link        http://www.grocerycrud.com/documentation
  */
 class grocery_CRUD_Field_Types {
 
@@ -327,11 +327,11 @@ class grocery_CRUD_Field_Types {
      * Limits the string based on the character count.  Preserves complete words
      * so the character count may not be exactly as specified.
      *
-     * @access	public
-     * @param	string
-     * @param	integer
-     * @param	string	the end character. Usually an ellipsis
-     * @return	string
+     * @access  public
+     * @param   string
+     * @param   integer
+     * @param   string  the end character. Usually an ellipsis
+     * @return  string
      */
     function character_limiter($str, $n = 500, $end_char = '&#8230;') {
         if (strlen($str) < $n) {
@@ -415,10 +415,10 @@ class grocery_CRUD_Field_Types {
  *
  * Drives the model - I'ts so easy like you drive a bicycle :-)
  *
- * @package    	grocery CRUD
- * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
- * @version    	1.4.1
- * @link		http://www.grocerycrud.com/documentation
+ * @package     grocery CRUD
+ * @author      John Skoumbourdis <scoumbourdisj@gmail.com>
+ * @version     1.4.1
+ * @link        http://www.grocerycrud.com/documentation
  */
 class grocery_CRUD_Model_Driver extends grocery_CRUD_Field_Types {
 
@@ -1205,10 +1205,10 @@ class grocery_CRUD_Model_Driver extends grocery_CRUD_Field_Types {
  * Please see the corresponding license file for details of these licenses.
  * You are free to use, modify and distribute this software, but all copyright information must remain.
  *
- * @package    	grocery CRUD
- * @copyright  	Copyright (c) 2010 through 2012, John Skoumbourdis
- * @license    	https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
- * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
+ * @package     grocery CRUD
+ * @copyright   Copyright (c) 2010 through 2012, John Skoumbourdis
+ * @license     https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
+ * @author      John Skoumbourdis <scoumbourdisj@gmail.com>
  */
 // ------------------------------------------------------------------------
 
@@ -1217,9 +1217,9 @@ class grocery_CRUD_Model_Driver extends grocery_CRUD_Field_Types {
  *
  * Here you manage all the HTML Layout
  *
- * @package    	grocery CRUD
- * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
- * @version    	1.4.1
+ * @package     grocery CRUD
+ * @author      John Skoumbourdis <scoumbourdisj@gmail.com>
+ * @version     1.4.1
  */
 class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver {
 
@@ -1373,12 +1373,12 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver {
 
     protected function _print_webpage($data) {
         $string_to_print = "<meta charset=\"utf-8\" /><style type=\"text/css\" >
-		#print-table{ color: #000; background: #fff; font-family: Verdana,Tahoma,Helvetica,sans-serif; font-size: 13px;}
-		#print-table table tr td, #print-table table tr th{ border: 1px solid black; border-bottom: none; border-right: none; padding: 4px 8px 4px 4px}
-		#print-table table{ border-bottom: 1px solid black; border-right: 1px solid black}
-		#print-table table tr th{text-align: left;background: #ddd}
-		#print-table table tr:nth-child(odd){background: #eee}
-		</style>";
+        #print-table{ color: #000; background: #fff; font-family: Verdana,Tahoma,Helvetica,sans-serif; font-size: 13px;}
+        #print-table table tr td, #print-table table tr th{ border: 1px solid black; border-bottom: none; border-right: none; padding: 4px 8px 4px 4px}
+        #print-table table{ border-bottom: 1px solid black; border-right: 1px solid black}
+        #print-table table tr th{text-align: left;background: #ddd}
+        #print-table table tr:nth-child(odd){background: #eee}
+        </style>";
         $string_to_print .= "<div id='print-table'>";
 
         $string_to_print .= '<table width="100%" cellpadding="0" cellspacing="0" ><tr>';
@@ -1903,8 +1903,8 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver {
             $datetime = '';
         }
         $input = "<input id='field-{$field_info->name}' name='{$field_info->name}' type='text' value='$datetime' maxlength='19' class='datetime-input' />
-		<a class='datetime-input-clear' tabindex='-1'>" . $this->l('form_button_clear') . "</a>
-		({$this->ui_date_format}) hh:mm:ss";
+        <a class='datetime-input-clear' tabindex='-1'>" . $this->l('form_button_clear') . "</a>
+        ({$this->ui_date_format}) hh:mm:ss";
         return $input;
     }
 
@@ -1949,7 +1949,7 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver {
         }
 
         $input = "<input id='field-{$field_info->name}' name='{$field_info->name}' type='text' value='$date' maxlength='10' class='datepicker-input' />
-		<a class='datepicker-input-clear' tabindex='-1'>" . $this->l('form_button_clear') . "</a> (" . $this->ui_date_format . ")";
+        <a class='datepicker-input-clear' tabindex='-1'>" . $this->l('form_button_clear') . "</a> (" . $this->ui_date_format . ")";
         return $input;
     }
 
@@ -2184,27 +2184,27 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver {
         $max_file_size_bytes = $this->_convert_bytes_ui_to_bytes($max_file_size_ui);
 
         $this->_inline_js('
-			var upload_info_' . $unique . ' = {
-				accepted_file_types: /(\\.|\\/)(' . $allowed_files . ')$/i,
-				accepted_file_types_ui : "' . $allowed_files_ui . '",
-				max_file_size: ' . $max_file_size_bytes . ',
-				max_file_size_ui: "' . $max_file_size_ui . '"
-			};
+            var upload_info_' . $unique . ' = {
+                accepted_file_types: /(\\.|\\/)(' . $allowed_files . ')$/i,
+                accepted_file_types_ui : "' . $allowed_files_ui . '",
+                max_file_size: ' . $max_file_size_bytes . ',
+                max_file_size_ui: "' . $max_file_size_ui . '"
+            };
 
-			var string_upload_file 	= "' . $this->l('form_upload_a_file') . '";
-			var string_delete_file 	= "' . $this->l('string_delete_file') . '";
-			var string_progress 			= "' . $this->l('string_progress') . '";
-			var error_on_uploading 			= "' . $this->l('error_on_uploading') . '";
-			var message_prompt_delete_file 	= "' . $this->l('message_prompt_delete_file') . '";
+            var string_upload_file  = "' . $this->l('form_upload_a_file') . '";
+            var string_delete_file  = "' . $this->l('string_delete_file') . '";
+            var string_progress             = "' . $this->l('string_progress') . '";
+            var error_on_uploading          = "' . $this->l('error_on_uploading') . '";
+            var message_prompt_delete_file  = "' . $this->l('message_prompt_delete_file') . '";
 
-			var error_max_number_of_files 	= "' . $this->l('error_max_number_of_files') . '";
-			var error_accept_file_types 	= "' . $this->l('error_accept_file_types') . '";
-			var error_max_file_size 		= "' . str_replace("{max_file_size}", $max_file_size_ui, $this->l('error_max_file_size')) . '";
-			var error_min_file_size 		= "' . $this->l('error_min_file_size') . '";
+            var error_max_number_of_files   = "' . $this->l('error_max_number_of_files') . '";
+            var error_accept_file_types     = "' . $this->l('error_accept_file_types') . '";
+            var error_max_file_size         = "' . str_replace("{max_file_size}", $max_file_size_ui, $this->l('error_max_file_size')) . '";
+            var error_min_file_size         = "' . $this->l('error_min_file_size') . '";
 
-			var base_url = "' . base_url() . '";
-			var upload_a_file_string = "' . $this->l('form_upload_a_file') . '";
-		');
+            var base_url = "' . base_url() . '";
+            var upload_a_file_string = "' . $this->l('form_upload_a_file') . '";
+        ');
 
         $uploader_display_none = empty($value) ? "" : "display:none;";
         $file_display_none = empty($value) ? "display:none;" : "";
@@ -2215,10 +2215,10 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver {
         $image_class = $is_image ? 'image-thumbnail' : '';
 
         $input = '<span class="fileinput-button qq-upload-button" id="upload-button-' . $unique . '" style="' . $uploader_display_none . '">
-			<span>' . $this->l('form_upload_a_file') . '</span>
-			<input type="file" name="' . $this->_unique_field_name($field_info->name) . '" class="gc-file-upload" rel="' . $this->getUploadUrl($field_info->name) . '" id="' . $unique . '">
-			<input class="hidden-upload-input" type="hidden" name="' . $field_info->name . '" value="' . $value . '" rel="' . $this->_unique_field_name($field_info->name) . '" />
-		</span>';
+            <span>' . $this->l('form_upload_a_file') . '</span>
+            <input type="file" name="' . $this->_unique_field_name($field_info->name) . '" class="gc-file-upload" rel="' . $this->getUploadUrl($field_info->name) . '" id="' . $unique . '">
+            <input class="hidden-upload-input" type="hidden" name="' . $field_info->name . '" value="' . $value . '" rel="' . $this->_unique_field_name($field_info->name) . '" />
+        </span>';
 
         $this->set_css($this->default_css_path . '/jquery_plugins/file_upload/fileuploader.css');
 
@@ -2445,10 +2445,10 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver {
  * Please see the corresponding license file for details of these licenses.
  * You are free to use, modify and distribute this software, but all copyright information must remain.
  *
- * @package    	grocery CRUD
- * @copyright  	Copyright (c) 2010 through 2012, John Skoumbourdis
- * @license    	https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
- * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
+ * @package     grocery CRUD
+ * @copyright   Copyright (c) 2010 through 2012, John Skoumbourdis
+ * @license     https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
+ * @author      John Skoumbourdis <scoumbourdisj@gmail.com>
  */
 // ------------------------------------------------------------------------
 
@@ -2457,9 +2457,9 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver {
  *
  * States of grocery CRUD
  *
- * @package    	grocery CRUD
- * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
- * @version    	1.4.1
+ * @package     grocery CRUD
+ * @author      John Skoumbourdis <scoumbourdisj@gmail.com>
+ * @version     1.4.1
  */
 class grocery_CRUD_States extends grocery_CRUD_Layout {
 
@@ -2803,11 +2803,11 @@ class grocery_CRUD_States extends grocery_CRUD_Layout {
  * Please see the corresponding license file for details of these licenses.
  * You are free to use, modify and distribute this software, but all copyright information must remain.
  *
- * @package    	grocery CRUD
- * @copyright  	Copyright (c) 2010 through 2012, John Skoumbourdis
- * @license    	https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
- * @version    	1.4.1
- * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
+ * @package     grocery CRUD
+ * @copyright   Copyright (c) 2010 through 2012, John Skoumbourdis
+ * @license     https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
+ * @version     1.4.1
+ * @author      John Skoumbourdis <scoumbourdisj@gmail.com>
  */
 // ------------------------------------------------------------------------
 
@@ -2816,17 +2816,17 @@ class grocery_CRUD_States extends grocery_CRUD_Layout {
  *
  * Creates a full functional CRUD with few lines of code.
  *
- * @package    	grocery CRUD
- * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
+ * @package     grocery CRUD
+ * @author      John Skoumbourdis <scoumbourdisj@gmail.com>
  * @license     https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
- * @link		http://www.grocerycrud.com/documentation
+ * @link        http://www.grocerycrud.com/documentation
  */
 class Grocery_CRUD extends grocery_CRUD_States {
 
     /**
      * Grocery CRUD version
      *
-     * @var	string
+     * @var string
      */
     const VERSION = "1.4.1";
     const JQUERY = "jquery-1.10.2.min.js";
@@ -2922,7 +2922,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
      *
      * Constructor
      *
-     * @access	public
+     * @access  public
      */
     public function __construct() {
         
@@ -2931,10 +2931,10 @@ class Grocery_CRUD extends grocery_CRUD_States {
     /**
      * The displayed columns that user see
      *
-     * @access	public
-     * @param	string
-     * @param	array
-     * @return	void
+     * @access  public
+     * @param   string
+     * @param   array
+     * @return  void
      */
     public function columns() {
         $args = func_get_args();
@@ -2953,10 +2953,10 @@ class Grocery_CRUD extends grocery_CRUD_States {
      *
      * Important note: If the $field is an array then no automated crud fields will take apart
      *
-     * @access	public
-     * @param	mixed
-     * @param	string
-     * @return	void
+     * @access  public
+     * @param   mixed
+     * @param   string
+     * @return  void
      */
     function set_rules($field, $label = '', $rules = '') {
         if (is_string($field)) {
@@ -3013,10 +3013,10 @@ class Grocery_CRUD extends grocery_CRUD_States {
     /**
      * Unsets the texteditor of the selected fields
      *
-     * @access	public
-     * @param	string
-     * @param	array
-     * @return	void
+     * @access  public
+     * @param   string
+     * @param   array
+     * @return  void
      */
     public function unset_texteditor() {
         $args = func_get_args();
@@ -3035,7 +3035,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
      * Unsets just the jquery library from the js. This function can be used if there is already a jquery included
      * in the main template. This will avoid all jquery conflicts.
      *
-     * @return	void
+     * @return  void
      */
     public function unset_jquery() {
         $this->unset_jquery = true;
@@ -3048,7 +3048,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
      * when the jquery UI JavaScript and CSS are already included in the main template.
      * This will avoid all jquery UI conflicts.
      *
-     * @return	void
+     * @return  void
      */
     public function unset_jquery_ui() {
         $this->unset_jquery_ui = true;
@@ -3060,7 +3060,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
      * Unsets just the twitter bootstrap libraries from the js and css. This function can be used if there is already twitter bootstrap files included
      * in the main template. If you are already using a bootstrap template then it's not necessary to load the files again.
      *
-     * @return	void
+     * @return  void
      */
     public function unset_bootstrap() {
         $this->unset_bootstrap = true;
@@ -3071,7 +3071,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
     /**
      * Unsets the add operation from the list
      *
-     * @return	void
+     * @return  void
      */
     public function unset_add() {
         $this->unset_add = true;
@@ -3082,7 +3082,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
     /**
      * Unsets the edit operation from the list
      *
-     * @return	void
+     * @return  void
      */
     public function unset_edit() {
         $this->unset_edit = true;
@@ -3093,7 +3093,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
     /**
      * Unsets the delete operation from the list
      *
-     * @return	void
+     * @return  void
      */
     public function unset_delete() {
         $this->unset_delete = true;
@@ -3104,7 +3104,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
     /**
      * Unsets the read operation from the list
      *
-     * @return	void
+     * @return  void
      */
     public function unset_read() {
         $this->unset_read = true;
@@ -3115,7 +3115,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
     /**
      * Unsets the export button and functionality from the list
      *
-     * @return	void
+     * @return  void
      */
     public function unset_export() {
         $this->unset_export = true;
@@ -3126,7 +3126,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
     /**
      * Unsets the print button and functionality from the list
      *
-     * @return	void
+     * @return  void
      */
     public function unset_print() {
         $this->unset_print = true;
@@ -3137,7 +3137,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
     /**
      * Unsets all the operations from the list
      *
-     * @return	void
+     * @return  void
      */
     public function unset_operations() {
         $this->unset_add = true;
@@ -3153,7 +3153,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
     /**
      * Unsets a column from the list
      *
-     * @return	void.
+     * @return  void.
      */
     public function unset_columns() {
         $args = func_get_args();
@@ -3212,8 +3212,8 @@ class Grocery_CRUD extends grocery_CRUD_States {
 
     /**
      * Unsets everything that has to do with buttons or links with go back to list message
-     * @access	public
-     * @return	void
+     * @access  public
+     * @return  void
      */
     public function unset_back_to_list() {
         $this->unset_back_to_list = true;
@@ -3225,10 +3225,10 @@ class Grocery_CRUD extends grocery_CRUD_States {
      *
      * The fields that user will see on add/edit
      *
-     * @access	public
-     * @param	string
-     * @param	array
-     * @return	void
+     * @access  public
+     * @param   string
+     * @param   array
+     * @return  void
      */
     public function fields() {
         $args = func_get_args();
@@ -3648,7 +3648,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
      * Or else ... make it work! The web application takes decision of what to do and show it to the final user.
      * Without this function nothing works. Here is the core of grocery CRUD project.
      *
-     * @access	public
+     * @access  public
      */
     public function render() {
         $this->pre_render();
@@ -4169,7 +4169,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
      * all the CRUD operations correctly.
      * The url path has to be set from this method like this:
      * <code>
-     * 		$crud->set_crud_url_path(site_url('example/index'));
+     *      $crud->set_crud_url_path(site_url('example/index'));
      * </code>
      *
      * @param string $crud_url_path
@@ -4280,7 +4280,7 @@ class Grocery_CRUD extends grocery_CRUD_States {
         /** Check if the upload Url folder exists. If not then throw an exception * */
         if (!is_dir(FCPATH . $upload_dir)) {
             throw new Exception("It seems that the folder \"" . FCPATH . $upload_dir . "\" for the field name
-					\"" . $field_name . "\" doesn't exists. Please create the folder and try again.");
+                    \"" . $field_name . "\" doesn't exists. Please create the folder and try again.");
         }
 
         $this->upload_fields[$field_name] = (object) array(
