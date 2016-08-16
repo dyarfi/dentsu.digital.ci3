@@ -68,7 +68,7 @@ class User extends Admin_Controller {
         $data['page_title'] = $this->module_menu;
 
         // Load admin template
-        $this->load->view('template/admin/template', $this->load->vars($data));
+        $this->load->view('users/users_index', $this->load->vars($data));
 
     }	
     
@@ -174,7 +174,7 @@ class User extends Admin_Controller {
 	    $data['class_name'] = $this->_class_name;
 
 	    // Main template
-	    $data['main']		= 'users/users_form';		
+	    // $data['main']		= 'users/users_form';		
 
 	    // Set module with URL request 
 	    $data['module_title'] = $this->module;
@@ -183,7 +183,7 @@ class User extends Admin_Controller {
 	    $data['page_title'] = $this->module_menu;
 
 	    // Admin view template
-	    $this->load->view('template/admin/template', $this->load->vars($data));
+	    $this->load->view('users/users_form', $this->load->vars($data));
 
     }
 	
@@ -329,7 +329,7 @@ class User extends Admin_Controller {
 	    $data['class_name'] = $this->_class_name;
 
 	    // Set form to view
-	    $data['main'] = 'users/users_form';			
+	    // $data['main'] = 'users/users_form';			
 
 	    // Set module with URL request 
 	    $data['module_title'] = $this->module;
@@ -338,7 +338,7 @@ class User extends Admin_Controller {
 	    $data['page_title'] = $this->module_menu;
 
 	    // Set admin template
-	    $this->load->view('template/admin/template', $this->load->vars($data));
+	    $this->load->view('users/users_form', $this->load->vars($data));
 
     }
 	
@@ -408,7 +408,7 @@ class User extends Admin_Controller {
         $data['user_profile']	= $this->UserProfiles->getUserProfile($id);
 
         // Main template
-        $data['main']	= 'users/users_view';
+        //$data['main']	= 'users/users_view';
 
         // Set module with URL request 
         $data['module_title'] = $this->module;
@@ -417,7 +417,7 @@ class User extends Admin_Controller {
         $data['page_title'] = $this->module_menu;
 
         // Load admin template
-        $this->load->view('template/admin/template',$this->load->vars($data));
+        $this->load->view('users/users_view',$this->load->vars($data));
     }
 
     // Ajax Methods for this controller and module

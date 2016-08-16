@@ -21,7 +21,7 @@
 class MY_Output extends CI_Output {
 	const OUTPUT_MODE_NORMAL = 10;
 	const OUTPUT_MODE_TEMPLATE = 11;
-	const TEMPLATE_ROOT = "themes/";
+	const TEMPLATE_ROOT = "template/admin/";
 
 	private $_title = "";
 	private $_charset = "utf-8";
@@ -181,7 +181,7 @@ class MY_Output extends CI_Output {
 				}
 
 				$cache_file_name = 'cache_'.md5(serialize($cached_js_files)).'.js';
-				$cache_file_path = 'assets/themes/default/js/'.$cache_file_name;
+				$cache_file_path = 'assets/admin/default/js/'.$cache_file_name;
 
 				$fh = fopen($cache_file_path, 'w') or die("can't open file");
 				fwrite($fh, $cached_js_files_string);

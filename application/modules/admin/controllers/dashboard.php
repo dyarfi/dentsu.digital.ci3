@@ -16,11 +16,11 @@ class Dashboard extends Admin_Controller {
 		
 		//Put session check in constructor
 		$data['user'] = $this->session->userdata('user_session');
-
+				
 	}
 	
 	public function index() {
-	    
+	    // print_r($this->template);
 		// Check if the request via AJAX
 		if ($this->input->is_ajax_request()) {
 			$this->stat_dashboard();
@@ -36,7 +36,7 @@ class Dashboard extends Admin_Controller {
 		
 		// Load WYSIHTML CSS and Others
 		$data['css_files'] = array(
-			base_url('assets/admin/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.css"'));
+			base_url('assets/admin/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.css'));
 		
 		// Load Text Editor execution
 		$data['js_inline'] = "Index.initCharts(); // Initialize graph";
@@ -58,9 +58,9 @@ class Dashboard extends Admin_Controller {
 	    
 		// Set admin title page with module menu
 		$data['page_title'] = $this->module_menu;
-
+		
 	    //$this->load->view('template/dashboard');
-	    $this->load->view('template/admin/template', $this->load->vars($data));
+	    $this->load->view('admin/dashboard', $this->load->vars($data));
 		
 	}
         

@@ -13,6 +13,8 @@ class Admin_Controller extends CI_Controller {
 	
 	public $setting ='';
 	public $i18ln = '';
+	
+	protected $template = '';
 		
 	public function __construct() {
 		parent::__construct();	
@@ -22,19 +24,26 @@ class Admin_Controller extends CI_Controller {
 		$this->load->library('session');
         
         // Load Helper Library
-        $this->load->helper('csv');
+        // $this->load->helper('csv');
 		
 		// Load Admin config
 		$this->configs			= $this->load->config('admin/admin',true);			
 		
-		// Load Setting Model
-		// $this->load->model('admin/Settings');
+		// Load Configuration Model
+		$this->load->model('admin/Configurations');
+		
+		// Set default template
+		//$theme = $this->Configurations->getConfiguration('theme')->value;
+		//$this->template = ($theme) ? $theme : 'template';
 		
 		// Load Setting Model
-		// $this->load->model('admin/Languages');
+		$this->load->model('admin/Settings');
+		
+		// Load Language Model
+		$this->load->model('admin/Languages');
 		
 		// Set i18ln for the default language
-		// $this->i18ln = $this->Languages->getDefault();
+		$this->i18ln = $this->Languages->getDefault();
 		
 		// Session destroy
 		//$this->session->sess_destroy();
@@ -81,7 +90,11 @@ class Admin_Controller extends CI_Controller {
 		$this->previous_url	= $this->session->userdata('prev_url');
 		
 		// Check user access list
-		self::check_module_permission($this->controller, $this->action, $this->param);				
+		self::check_module_permission($this->controller, $this->action, $this->param);	
+		
+		//Set default themes template
+		//$this->output->set_template('default/template');
+		$this->output->set_template('gentelella/template');
 		
 	}
 	
