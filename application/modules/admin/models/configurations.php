@@ -37,7 +37,7 @@ class Configurations Extends MY_Model {
 				. '(\'install\', \'0\'),'
 				. '(\'maintenance\', \'0\'),'
 				. '(\'environment\', \'0\'),'
-				. '(\'theme\', \'0\')';
+				. '(\'theme\', \'default\')';
 
 		if ($sql) $this->db->query($sql);
 	    }
