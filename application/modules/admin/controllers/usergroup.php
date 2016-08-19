@@ -44,9 +44,6 @@ class UserGroup extends Admin_Controller {
 		// Set class name to view
 		$data['class_name'] = $this->_class_name;
 
-		// Main template
-		$data['main'] = 'users/usergroups_index';
-
 		// Set module with URL request 
 		$data['module_title'] = $this->module;
 
@@ -54,7 +51,7 @@ class UserGroup extends Admin_Controller {
 		$data['page_title'] = $this->module_menu;
 
 		// Load admin template
-		$this->load->view('template/admin/template', $this->load->vars($data));
+		$this->load->view('users/usergroups_index', $this->load->vars($data));
 
     }
 
@@ -120,9 +117,6 @@ class UserGroup extends Admin_Controller {
 		// Post Fields
 		$data['fields']	= (object) $fields;
 
-		// Main template
-		$data['main']	= 'users/usergroups_form';		
-
 		// Set class name to view
 		$data['class_name'] = $this->_class_name;
 
@@ -133,7 +127,7 @@ class UserGroup extends Admin_Controller {
 		$data['page_title'] = $this->module_menu;
 
 		// Admin view template
-		$this->load->view('template/admin/template', $this->load->vars($data));
+		$this->load->view('users/usergroups_form', $this->load->vars($data));
 
     }
 
@@ -216,9 +210,6 @@ class UserGroup extends Admin_Controller {
 		// Set default statuses
 		$data['statuses'] = $this->configs['status'];
 
-		// Set form to view
-		$data['main'] = 'users/usergroups_form';			
-
 		// Set class name to view
 		$data['class_name'] = $this->_class_name;
 
@@ -229,7 +220,7 @@ class UserGroup extends Admin_Controller {
 		$data['page_title'] = $this->module_menu;
 
 		// Set admin template
-		$this->load->view('template/admin/template', $this->load->vars($data));
+		$this->load->view('users/usergroups_form', $this->load->vars($data));
 
     }
     public function delete($id){
@@ -267,9 +258,6 @@ class UserGroup extends Admin_Controller {
 		// Set class name to view
 		$data['class_name'] = $this->_class_name;
 
-		// Main template
-		$data['main']	= 'users/usergroups_view';
-
 		// Set module with URL request 
 		$data['module_title'] = $this->module;
 
@@ -277,7 +265,7 @@ class UserGroup extends Admin_Controller {
 		$data['page_title'] = $this->module_menu;
 
 		// Set admin template
-		$this->load->view('template/admin/template', $this->load->vars($data));
+		$this->load->view('users/usergroups_view', $this->load->vars($data));
     }
 
     // Action for update item status

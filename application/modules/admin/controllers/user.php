@@ -58,9 +58,6 @@ class User extends Admin_Controller {
 	    // User profiles
         $data['user_profiles'] = $this->UserProfiles->getUserProfile($this->acl->user()->id);
 	    
-        // Set main template
-        $data['main'] = 'users/users_index';
-
         // Set module with URL request 
         $data['module_title'] = $this->module;
 
@@ -172,10 +169,7 @@ class User extends Admin_Controller {
 
 	    // Set class name to view
 	    $data['class_name'] = $this->_class_name;
-
-	    // Main template
-	    // $data['main']		= 'users/users_form';		
-
+		
 	    // Set module with URL request 
 	    $data['module_title'] = $this->module;
 
@@ -328,9 +322,6 @@ class User extends Admin_Controller {
 	    // Set class name to view
 	    $data['class_name'] = $this->_class_name;
 
-	    // Set form to view
-	    // $data['main'] = 'users/users_form';			
-
 	    // Set module with URL request 
 	    $data['module_title'] = $this->module;
 
@@ -406,9 +397,6 @@ class User extends Admin_Controller {
 
         // User profile data
         $data['user_profile']	= $this->UserProfiles->getUserProfile($id);
-
-        // Main template
-        //$data['main']	= 'users/users_view';
 
         // Set module with URL request 
         $data['module_title'] = $this->module;

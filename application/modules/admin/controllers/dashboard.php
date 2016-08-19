@@ -53,13 +53,9 @@ class Dashboard extends Admin_Controller {
 	    // Set page title
 	    $data['title']	= "Dashboard Home";
 	    
-	    // Set main template
-	    $data['main']	= 'admin/dashboard';
-	    
 		// Set admin title page with module menu
 		$data['page_title'] = $this->module_menu;
 		
-	    //$this->load->view('template/dashboard');
 	    $this->load->view('admin/dashboard', $this->load->vars($data));
 		
 	}

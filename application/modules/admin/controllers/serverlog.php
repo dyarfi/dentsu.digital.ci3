@@ -27,9 +27,6 @@ class ServerLog extends Admin_Controller {
 	    // Set class name to view
 	    $data['class_name'] = $this->_class_name;
 	    
-	    // Set main template
-	    $data['main']	= 'users/serverlog_index';
-
 	    // Set module with URL request 
 	    $data['module_title'] = $this->module;
 
@@ -43,7 +40,7 @@ class ServerLog extends Admin_Controller {
 	    $data['is_system'] = $this->configs['is_system'];
 
 	    // Load admin template
-	    $this->load->view('template/admin/template', $this->load->vars($data));
+	    $this->load->view('users/serverlog_index', $this->load->vars($data));
 	    
 	}
         
@@ -130,10 +127,7 @@ class ServerLog extends Admin_Controller {
 		
 		// Set class name to view
 		$data['class_name'] = $this->_class_name;
-		
-		// Set form to view
-		$data['main']       = 'logs/log_form';			
-		
+
 		// Set module with URL request 
 		$data['module_title'] = $this->module;
 		
@@ -141,7 +135,7 @@ class ServerLog extends Admin_Controller {
 		$data['page_title'] = $this->module_menu;
 		
 		// Set admin template
-		$this->load->view('template/admin/template', $this->load->vars($data));
+		$this->load->view('logs/log_form', $this->load->vars($data));
 		
 	}
         
@@ -209,10 +203,7 @@ class ServerLog extends Admin_Controller {
 
 		// Set class name to view
 		$data['class_name'] = $this->_class_name;
-	    
-		// Main template
-		$data['main']		= 'logs/log_form';		
-	
+
 		// Set module with URL request 
 		$data['module_title'] = $this->module;
 		
@@ -220,7 +211,7 @@ class ServerLog extends Admin_Controller {
 		$data['page_title'] = $this->module_menu;
 		
 		// Admin view template
-		$this->load->view('template/admin/template', $this->load->vars($data));
+		$this->load->view('logs/log_form', $this->load->vars($data));
 				
 	}
         
@@ -243,10 +234,7 @@ class ServerLog extends Admin_Controller {
             $data['log']			= $this->ServerLogs->getServerLog($id);		
 
 			// Set class name to view
-		   $data['class_name'] = $this->_class_name;
-	    
-            // Main template
-            $data['main']	= 'logs/log_view';
+		    $data['class_name'] = $this->_class_name;
 
             // Set module with URL request 
             $data['module_title'] = $this->module;
@@ -255,7 +243,7 @@ class ServerLog extends Admin_Controller {
             $data['page_title'] = $this->module_menu;
 
             // Load admin template
-            $this->load->view('template/admin/template',$this->load->vars($data));
+            $this->load->view('logs/log_view',$this->load->vars($data));
     }
     
     public function delete($id){

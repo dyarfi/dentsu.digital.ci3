@@ -67,15 +67,13 @@ class ModuleList extends Admin_Controller {
 		
 		$data['statuses']	= array('Active'=>'active','Inactive'=>'inactive');
 		
-		$data['main']		= 'users/module_list';
-				
 		// Set module with URL request 
 		$data['module_title'] = $this->module;
 		
 		// Set admin title page with module menu
 		$data['page_title'] = $this->module_menu;
 		
-		$this->load->view('template/admin/template', $this->load->vars($data));
+		$this->load->view('users/module_list', $this->load->vars($data));
 				
 	}
 	

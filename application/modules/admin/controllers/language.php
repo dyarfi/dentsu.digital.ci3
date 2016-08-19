@@ -36,9 +36,6 @@ class Language extends Admin_Controller {
 	    // Set class name to view
 	    $data['class_name'] = $this->_class_name;
 	    
-	    // Main template
-	    $data['main'] = 'language/language_index';
-
 	    // Set module with URL request 
 	    $data['module_title'] = $this->module;
 
@@ -46,7 +43,7 @@ class Language extends Admin_Controller {
 	    $data['page_title'] = $this->module_menu;
 
 	    // Load admin template
-	    $this->load->view('template/admin/template', $this->load->vars($data));
+	    $this->load->view('language/language_index', $this->load->vars($data));
 				
 	}
 	
@@ -118,10 +115,7 @@ class Language extends Admin_Controller {
 	    
 	    // Set class name to view
 	    $data['class_name'] = $this->_class_name;
-
-	    // Main template
-	    $data['main']	= 'language/language_form';		
-
+		
 	    // Set module with URL request 
 	    $data['module_title'] = $this->module;
 
@@ -129,7 +123,7 @@ class Language extends Admin_Controller {
 	    $data['page_title'] = $this->module_menu;
 
 	    // Admin view template
-	    $this->load->view('template/admin/template', $this->load->vars($data));
+	    $this->load->view('language/language_form', $this->load->vars($data));
 		
 	}
 	
@@ -222,18 +216,15 @@ class Language extends Admin_Controller {
 
 	    // Set class name to view
 	    $data['class_name'] = $this->_class_name;
-	    
-	    // Set form to view
-	    $data['main'] = 'language/language_form';			
-
-	    // Set module with URL request 
+	 
+		// Set module with URL request 
 	    $data['module_title'] = $this->module;
 
 	    // Set admin title page with module menu
 	    $data['page_title'] = $this->module_menu;
 
 	    // Set admin template
-	    $this->load->view('template/admin/template', $this->load->vars($data));
+	    $this->load->view('language/language_form', $this->load->vars($data));
 
 	}
 	public function delete($id){
@@ -273,9 +264,6 @@ class Language extends Admin_Controller {
 
 	    // Set class name to view
 	    $data['class_name'] = $this->_class_name;
-	    
-	    // Main template
-	    $data['main']	= 'language/language_view';
 
 	    // Set module with URL request 
 	    $data['module_title'] = $this->module;
@@ -284,7 +272,7 @@ class Language extends Admin_Controller {
 	    $data['page_title'] = $this->module_menu;
 
 		// Load admin template
-	    $this->load->view('template/admin/template', $this->load->vars($data));
+	    $this->load->view('language/language_view', $this->load->vars($data));
 	}
 	
 	// Action for update item status

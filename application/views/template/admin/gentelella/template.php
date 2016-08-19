@@ -60,7 +60,7 @@
 				<!-- sidebar menu -->
 				<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 				  <div class="menu_section">
-					<h3>General</h3>
+					<h3>&nbsp;</h3>
 					<ul class="nav side-menu">
 					<?php		
 						$k = 0;
@@ -209,7 +209,7 @@
 			
 	<!-- page content -->
 	<div class="right_col" role="main">
-		<?php echo $this->load->view($main);?>
+		<?php echo $output;//echo $this->load->view($main);?>
 	</div>
 	<!-- /page content -->
 	

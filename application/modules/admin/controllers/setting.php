@@ -50,9 +50,6 @@ class Setting extends Admin_Controller {
 
 		// Set class name to view
 		$data['class_name'] = $this->_class_name;
-	    
-		// Set main template
-		$data['main']		= 'settings/setting_index';
 		
 		// Set module with URL request 
 		$data['module_title'] = $this->module;
@@ -67,7 +64,7 @@ class Setting extends Admin_Controller {
 		//$data['script_bottom'] = "load();setimg('".base_url()."assets/admin/img/')";
 		
 		// Load admin template
-		$this->load->view('template/admin/template', $this->load->vars($data));
+		$this->load->view('settings/setting_index', $this->load->vars($data));
 	}
         
 	public function edit($id=0) {
@@ -168,10 +165,7 @@ class Setting extends Admin_Controller {
 		
 		// Set class name to view
 		$data['class_name'] = $this->_class_name;
-	    
-		// Set form to view
-		$data['main']       = 'settings/setting_form';			
-		
+
 		// Set module with URL request 
 		$data['module_title']	= $this->module;
 		
@@ -179,7 +173,7 @@ class Setting extends Admin_Controller {
 		$data['page_title']		= $this->module_menu;
 		
 		// Set admin template
-		$this->load->view('template/admin/template', $this->load->vars($data));
+		$this->load->view('settings/setting_form', $this->load->vars($data));
 		
 	}
         
@@ -262,9 +256,6 @@ class Setting extends Admin_Controller {
 		// Set class name to view
 		$data['class_name']	= $this->_class_name;
 	    
-		// Main template
-		$data['main']		= 'settings/setting_form';		
-	
 		// Set module with URL request 
 		$data['module_title'] = $this->module;
 		
@@ -272,7 +263,7 @@ class Setting extends Admin_Controller {
 		$data['page_title'] = $this->module_menu;
 		
 		// Admin view template
-		$this->load->view('template/admin/template', $this->load->vars($data));
+		$this->load->view('settings/setting_form', $this->load->vars($data));
 				
 	}
         
@@ -297,9 +288,6 @@ class Setting extends Admin_Controller {
             // Listing data
             $data['listing']    = $this->Settings->getSetting($id);		
 
-            // Main template
-            $data['main']	= 'settings/setting_view';
-
             // Set default statuses
             $data['statuses'] = $this->configs['status'];
 
@@ -313,7 +301,7 @@ class Setting extends Admin_Controller {
             $data['page_title'] = $this->module_menu;
 
             // Load admin template
-            $this->load->view('template/admin/template',$this->load->vars($data));
+            $this->load->view('settings/setting_view',$this->load->vars($data));
     }
     
     public function delete($id){
