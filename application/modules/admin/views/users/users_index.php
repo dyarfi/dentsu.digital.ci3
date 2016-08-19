@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-<div class="page-content-wrapper">
-	<div class="page-content">
+<!-- top tiles -->
+<div class="row tile_count">
 		<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 		<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="portlet-config" class="modal fade">
 		    <div class="modal-dialog">
@@ -173,6 +173,4 @@
 			<?php }?>
 		    </div>
 		</div>
-		<!-- END PAGE CONTENT-->
-	</div>
 </div>
