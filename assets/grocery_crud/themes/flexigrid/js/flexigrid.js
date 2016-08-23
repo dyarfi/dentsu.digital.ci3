@@ -17,11 +17,44 @@ $(function(){
 		//If there is no thumbnail this means that the fancybox library doesn't exist
 		if ($('.image-thumbnail').length > 0) {
 			$('.image-thumbnail').fancybox({
-				'transitionIn'	:	'elastic',
-				'transitionOut'	:	'elastic',
-				'speedIn'		:	600,
-				'speedOut'		:	200,
-				'overlayShow'	:	false
+				'transitionIn': 'elastic',
+				'transitionOut': 'elastic',
+				'speedIn': 200,
+				'speedOut': 200,            
+				//'scrolling' : 'auto',
+				'centerOnScroll':true,
+				'overlayShow': true,            
+				'autoCenter' : true,
+				'autoResize' : true,
+				onComplete : function() {
+					var top = ($(window).height() / 2) - ($("#fancybox-wrap").outerHeight() / 2);
+					var left = ($(window).width() / 2) - ($("#fancybox-wrap").outerWidth() / 2);
+					$("#fancybox-wrap").css({ top: top, left: left});
+					$.fancybox.update;
+				}
+			});	
+			$('.fancyframe').fancybox({
+				'transitionIn': 'elastic',
+				'transitionOut': 'elastic',
+				'speedIn': 200,
+				'speedOut': 200,            
+				'centerOnScroll':true,
+				'overlayShow': true,
+				//'scrolling' : 'auto',
+				'aspectRatio' : true,
+				'width' : '100%',
+				'minHeight': '480',
+				'height': '480',
+				'autoCenter' : true,
+				'autoResize' : true,
+				'fitToView' : true,
+				'padding':15,
+				onComplete : function() {
+					//$.fancybox.css({'position':'aboslute'});
+					var top = ($(window).height() / 2) - ($("#fancybox-wrap").outerHeight() / 2);
+					var left = ($(window).width() / 2) - ($("#fancybox-wrap").outerWidth() / 2);
+					$("#fancybox-wrap").css({ top: top, left: left});
+				}
 			});			
 		}
 	};

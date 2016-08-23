@@ -38,25 +38,23 @@
 			<div class="col-md-3 left_col">
 				<div class="left_col scroll-view">
 				<div class="navbar nav_title" style="border: 0;">
-					<a href="<?php echo base_url();?>" class="site_title"><i class="fa fa-paw"></i> <span><img src="<?php echo base_url();?>assets/admin/gentelella/img/logo_small.png" alt="logo" class="img-responsive col-md-7 col-lg-7"/></span></a>
+					<a href="<?php echo base_url();?>" class="site_title"><!--i class="fa fa-paw visible-xs"></i--> <span><img style="margin-top:20px" src="<?php echo base_url("assets/admin/gentelella/themes/images/logo_small.png");?>" alt="logo" class="img-responsive col-md-11 col-lg-11"/></span></a>
 				</div>
 
 				<div class="clearfix"></div>
 
 				<!-- menu profile quick info -->
-				<div class="profile">
+				<!--div class="profile">
 				  <div class="profile_pic">
 					<img src="<?php echo base_url('assets/admin/gentelella/themes/images/img.jpg');?>" alt="..." class="img-circle profile_img">
 				  </div>
 				  <div class="profile_info">
 					<span>Welcome,</span>
-					<h2>John Doe</h2>
+					<h2><?php echo $this->user->email;?></h2>
 				  </div>
-				</div>
+				</div-->
 				<!-- /menu profile quick info -->
 
-				<br />
-		
 				<!-- sidebar menu -->
 				<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 				  <div class="menu_section">
@@ -66,12 +64,14 @@
 						$k = 0;
 						foreach ($this->acl->admin_system_modules() as $name => $functions) { 
 							if (is_array($functions) && count($functions) != 0) { ?>
-								<li class="<?if(preg_match('/\b'.$this->uri->segment(2).'\b/i', strtolower($name))) { ?>activ e<?php } ?>">
-								<a href="#collapse<?php echo $k;?>"><span class="fa fa-chevron-down"></span><?php echo $name; ?></a>
+							<li class="<?if(preg_match('/\b'.$this->uri->segment(2).'\b/i', strtolower($name))) { ?>activ e<?php } ?>">
+								<a href="#collapse<?php echo $k;?>"><i class="fa fa-edit"></i><?php echo $name; ?><span class="fa fa-chevron-down"></span></a>
 								<ul class="nav child_menu"> 
 								<?php foreach ($functions as $row_function => $row_label) { ?>
 									<?php if($this->acl->user()->group_id != 1 && $row_label == 'Groups') continue; ?>
-									<li class="<?php echo preg_match('/\b'.$this->uri->segment(2).'\b/i', substr($row_function, 0, strpos($row_function, '/'))) ? 'active' : ''; ?>">
+									<!--li class="<?php echo preg_match('/\b'.$this->uri->segment(2).'\b/i', substr($row_function, 0, strpos($row_function, '/'))) ? 'active' : ''; ?>"-->
+									<li class="<?php echo strstr($row_function,$this->uri->segment(2)) !='' ? 'active' : ''; ?>">
+									<?php //echo strstr($row_function,$this->uri->segment(2));?>
 									<a href="<?php echo base_url(ADMIN . $row_function .'?active=current'); ?>"><?php echo $row_label; ?></a>
 									</li>
 								<?php } ?>
@@ -256,7 +256,16 @@
 <script src="<?php echo base_url('assets/admin/gentelella/themes/js/datepicker/daterangepicker.js');?>"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="<?php echo base_url('assets/admin/gentelella/build/js/custom.min.js');?>"></script>
+<!--script src="<?php echo base_url('assets/admin/gentelella/build/js/custom.min.js');?>"></script-->
+<script src="<?php echo base_url('assets/admin/gentelella/build/js/custom.js');?>"></script>
+<!-- Development Scripts -->
+<script src="<?php echo base_url('assets/static/js/app.js');?>"></script>
+<script src="<?php echo base_url('assets/static/js/index.js');?>"></script>
+<script src="<?php echo base_url('assets/static/js/form-module.js');?>"></script>
+<script src="<?php echo base_url('assets/static/js/form-setting.js');?>"></script>
+<script src="<?php echo base_url('assets/static/js/form-status.js');?>"></script>
+<script src="<?php echo base_url('assets/static/js/form-user.js');?>"></script>
+<script src="<?php echo base_url('assets/static/js/table-managed.js');?>"></script>
 
  <?php if (!empty($js_files)) { foreach ($js_files as $file): ?>
     <script src="<?php echo $file; ?>"></script>
@@ -264,20 +273,20 @@
 
 <script>
 jQuery(document).ready(function() {    
-    //App.init(); // initlayout and core themes
+    App.init(); // initlayout and core themes
    
-    //TableManaged.init();
+    TableManaged.init();
    
     //ComponentsPickers.init();      
  
-    //Index.init();
+    Index.init();
     //Index.initCharts(); // init index page's custom scripts
     //Charts.initPieCharts();
     // Custom in admin pages
-    //FormStatus.init();
-    //FormUser.init();
-    //FormModule.init();
-    //FormSetting.init();
+    FormStatus.init();
+    FormUser.init();
+    FormModule.init();
+    FormSetting.init();
 <?php echo ($js_inline) ? "\t".$js_inline."\n" : "";?>
 <?php if ($this->session->flashdata('message')) { ?>
 	bootbox.alert('<h3><?php echo $this->session->flashdata('message');?></h3>');

@@ -1,9 +1,6 @@
 <?php
 	$this->set_css($this->default_theme_path.'/flexigrid/css/flexigrid.css');
-	
-	if (grocery_CRUD::JQUERY) {
-		$this->set_js_lib($this->default_javascript_path.'/'.grocery_CRUD::JQUERY);
-	}
+	$this->set_js_lib($this->default_javascript_path.'/'.grocery_CRUD::JQUERY);
 
 	$this->set_js_lib($this->default_javascript_path.'/jquery_plugins/jquery.noty.js');
 	$this->set_js_lib($this->default_javascript_path.'/jquery_plugins/config/jquery.noty.config.js');
@@ -62,7 +59,7 @@ if($success_message !== null){?>
 	<div class="tDiv">
 		<?php if(!$unset_add){?>
 		<div class="tDiv2">
-        	<a href='<?php echo $add_url?>' title='<?php echo $this->l('list_add'); ?> <?php echo $subject?>' class='add-anchor add_button'>
+        	<a href='<?php echo $add_url?>' title='<?php echo $this->l('list_add'); ?> <?php echo $subject?>' class='fancyframe iframe add-anchor add_button'>
 			<div class="fbutton">
 				<div>
 					<span class="add"><?php echo $this->l('list_add'); ?> <?php echo $subject?></span>

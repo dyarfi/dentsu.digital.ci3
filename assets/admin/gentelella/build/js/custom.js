@@ -31,10 +31,13 @@ $(document).ready(function() {
 
         $RIGHT_COL.css('min-height', contentHeight);
     };
-
+	
+	var $BTN_DEFAULT = $('a.btn.default.btn-xs');
+	$BTN_DEFAULT.removeClass('default').addClass('btn-default');
+	
     $SIDEBAR_MENU.find('a').on('click', function(ev) {
         var $li = $(this).parent();
-
+	
         if ($li.is('.active')) {
             $li.removeClass('active active-sm');
             $('ul:first', $li).slideUp(function() {

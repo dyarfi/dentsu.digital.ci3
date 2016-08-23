@@ -28,7 +28,10 @@ class Authenticate extends CI_Controller {
                 
         // Load Admin config
 		$this->configs = $this->load->config('admin/admin',true);
-                
+        
+		//Set default themes template
+		//$this->output->set_template('default/template');
+		$this->output->set_template('gentelella/template');       
 	}
     
     public function index () { 
@@ -150,10 +153,10 @@ class Authenticate extends CI_Controller {
 		$data['js_inline'] = "Login.init();";
 
 		// Set main template
-	    $data['main']	= 'admin/login';
+	    //$data['main']	= 'admin/login';
 	    
 	    // Load admin template
-	    $this->load->view('template/admin/login', $this->load->vars($data));
+	    $this->load->view('admin/login', $this->load->vars($data));
 	}
 	
 	public function logout() {

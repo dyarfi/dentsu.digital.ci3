@@ -71,11 +71,6 @@ class Career extends Admin_Controller {
         return '<!-- +30 <input type="text" maxlength="50" value="'.$value.'" name="phone" style="width:462px"> -->';
     }
 
-    public function _callback_total_image($value, $row) {
-        $total = $this->user_model->total_image_submitted($row->participant_id);
-        return $total;
-    }
-    
     private function load($crud, $nav) {
         $output = $crud->render();
         $output->nav = $nav;
@@ -83,11 +78,11 @@ class Career extends Admin_Controller {
             // Set Page Title 
             $output->page_title = 'Career Listings';
             // Set Main Template
-            $output->main       = 'template/admin/metronix';
+            // $output->main       = 'template/admin/gentelella/metronix';
             // Set Primary Template
-            $this->load->view('template/admin/template.php', $output);
+            $this->load->view('template/admin/gentelella/metronix.php', $output);
         } else {
-            $this->load->view('template/admin/popup.php', $output);
+            $this->load->view('template/admin/gentelella/popup.php', $output);
         }    
     }
 }

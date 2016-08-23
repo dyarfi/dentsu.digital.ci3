@@ -117,11 +117,11 @@ class Participant extends Admin_Controller {
             // Set Participant Title 
             $output->page_title = 'Participant Listings';
             // Set Main Template
-            $output->main       = 'template/admin/metronix';
+            $output->main       = 'template/admin/gentelella/metronix';
             // Set Primary Template
-            $this->load->view('template/admin/template.php', $output);
+            $this->load->view('template/admin/gentelella/metronix.php', $output);
         } else {
-            $this->load->view('template/admin/popup.php', $output);
+            $this->load->view('template/admin/gentelella/popup.php', $output);
         }    
     }
 }
